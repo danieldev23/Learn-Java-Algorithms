@@ -18,14 +18,26 @@ public class BinarySearch {
 		}
 		return -1;
 	}
-	
+		
 	public static void main(String[] args) {
-		int[] A = {21, 32, 45, 65 ,76, 79, 90, 101, 120, 135};
+		Random ran = new Random();
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Nhập số cần tìm: ");
+		System.out.println("Nhập số phần tử của mảng: ");
+		int b = sc.nextInt();
+		int[] A = new int[b];
+		for (int i = 0; i <  b; i++) {
+			A[i] = ran.nextInt(100) + 1;
+			System.out.print(A[i] + "\t"); 
+		}
+		System.out.println("\nNhập số cần tìm: ");
 		int k = sc.nextInt();
 		int n = A.length;
 		int result = binarySearch(A, k, n);
-		System.out.println("Vị trí của " (String)k + result);
+		if(result == -1) {
+			System.out.println("Số " + k +  " không có trong mảng");
+		}
+		else {
+			System.out.println("Vị trí của " + k +  " là " + result);
+		}
 	}
 }
